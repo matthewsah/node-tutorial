@@ -1,0 +1,17 @@
+const EventEmitter = require('events');
+
+const customEmitter = new EventEmitter()
+
+// on - listen for event
+// emit - emit event
+// emit means to discharge
+
+customEmitter.on('response', (name, id) => {
+  console.log(`data received ${name} with id:${id}`);
+});
+
+customEmitter.on('response', () => {
+  console.log(`some other logic here `);
+});
+
+customEmitter.emit('response', 'matt', 22);
